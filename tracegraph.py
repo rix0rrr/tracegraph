@@ -88,7 +88,7 @@ else:
 print ''
 print 'tracegraph:'
 
-hosts = list(to_host(line) for line in lines)
+hosts = list(to_host(line) for line in lines if not line.startswith('traceroute'))
 max_ping = max(h.max_ping() for h in hosts)
 
 WIDTH = 60
